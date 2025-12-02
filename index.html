@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN.ID - Jual Diamond Lock & Blue Gems Lock Growtopia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💎 MAIN.ID</h1>
+            <p>Jual Diamond Lock & Blue Gems Lock Growtopia</p>
+        </header>
+
+        <div class="rate-info">
+            💰 RATE BELI: 1 DL = Rp 425 | 1 BGL = Rp 42.500 💰
+        </div>
+        
+        <div class="rate-info" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); margin-top: 10px;">
+            💸 JUAL DL KE KAMI: 1 DL = Rp 400 | Drop di World: FAKSTORESV 💸
+        </div>
+
+        <div class="warning-box">
+            ⚠️ PENTING: PASTIKAN WORLD AMAN & TIDAK SEDANG DIBANNED!
+        </div>
+
+        <!-- Discord Webhook Settings (Hidden) -->
+        <div style="display: none;">
+            <input type="text" id="discordWebhookPayment" value="https://discord.com/api/webhooks/1445274239358992454/2u9-X06wJAlY7Pq9BAnUi6QDCWDUJVwGvBvoKLJDVC15usk0qumlyDHCw6PP26Sa8deA">
+            <input type="text" id="discordWebhookDrop" value="https://discord.com/api/webhooks/1445274233449218058/n3E1JryPSE1z2LcvmGhAAZxnWaPe1GYANGZrNG8t28WGlVJaSwG7V1uWhAD0ab072zJh">
+        </div>
+
+        <!-- Halaman Beranda / Pilih Paket -->
+        <div id="homepage" class="page active">
+            <div class="packages-grid">
+                <div class="package-card" onclick="addToCart('10 Diamond Lock (DL)', 4250)">
+                    <div class="dl-icon">💎</div>
+                    <h3>PAKET 10 DL</h3>
+                    <p class="item-desc">10 Diamond Lock</p>
+                    <div class="price">Rp 4.250</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+
+                <div class="package-card" onclick="addToCart('50 Diamond Lock (DL)', 21250)">
+                    <div class="dl-icon">💎</div>
+                    <h3>PAKET 50 DL</h3>
+                    <p class="item-desc">50 Diamond Lock</p>
+                    <div class="price">Rp 21.250</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+
+                <div class="package-card" onclick="addToCart('100 Diamond Lock (DL)', 42500)">
+                    <div class="dl-icon">💎</div>
+                    <h3>PAKET 100 DL</h3>
+                    <p class="item-desc">100 Diamond Lock</p>
+                    <div class="price">Rp 42.500</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+
+                <div class="package-card" onclick="addToCart('250 Diamond Lock (DL)', 106250)">
+                    <div class="dl-icon">💎</div>
+                    <h3>PAKET 250 DL</h3>
+                    <p class="item-desc">250 Diamond Lock</p>
+                    <div class="price">Rp 106.250</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+
+                <div class="package-card" onclick="addToCart('1 Blue Gem Lock (BGL)', 42500)">
+                    <div class="dl-icon">💠</div>
+                    <h3>PAKET 1 BGL</h3>
+                    <p class="item-desc">1 Blue Gem Lock</p>
+                    <div class="price">Rp 42.500</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+
+                <div class="package-card" onclick="addToCart('5 Blue Gem Lock (BGL)', 212500)">
+                    <div class="dl-icon">💠</div>
+                    <h3>PAKET 5 BGL</h3>
+                    <p class="item-desc">5 Blue Gem Lock</p>
+                    <div class="price">Rp 212.500</div>
+                    <button class="btn">Beli Sekarang</button>
+                </div>
+                
+                <div class="package-card sell-card" onclick="goToSellPage()">
+                    <div class="dl-icon">💸</div>
+                    <h3>JUAL DL/BGL</h3>
+                    <p class="item-desc">Jual DL/BGL Anda ke Kami</p>
+                    <div class="price" style="color: #16a34a;">Rate: 400/DL</div>
+                    <button class="btn" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);">Jual Sekarang</button>
+                </div>
+            </div>
+
+            <div class="cart" id="cartSection" style="display: none;">
+                <h2>🛒 Keranjang Belanja</h2>
+                <div id="cartItems"></div>
+                <div class="cart-total">Total: Rp <span id="totalPrice">0</span></div>
+                <button class="btn" onclick="goToCheckout()" style="margin-top: 20px; width: 100%;">Lanjut ke Checkout</button>
+            </div>
+
+            <div class="contact-section">
+                <h2>📱 Hubungi Kami</h2>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@_fuckhry" target="_blank" class="social-btn">🎵 TikTok: @_fuckhry</a>
+                    <a href="https://www.instagram.com/_fuckhry" target="_blank" class="social-btn">📸 Instagram: @_fuckhry</a>
+                    <a href="https://wa.me/6285737668457" target="_blank" class="social-btn">💬 WhatsApp Admin</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman Checkout -->
+        <div id="checkoutPage" class="page">
+            <div class="checkout-container">
+                <h2>📝 Form Checkout</h2>
+                
+                <div class="form-group">
+                    <label>GrowID *</label>
+                    <input type="text" id="growId" placeholder="Contoh: NAMAMU" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama World *</label>
+                    <input type="text" id="worldInfo" placeholder="Contoh: WORLDKAMU" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor WhatsApp *</label>
+                    <input type="tel" id="phoneNumber" placeholder="Contoh: 08123456789" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Catatan Tambahan</label>
+                    <textarea id="notes" rows="4" placeholder="Tambahkan catatan jika ada (opsional)..."></textarea>
+                </div>
+
+                <div class="cart">
+                    <h3>Pesanan Anda:</h3>
+                    <div id="checkoutCartItems"></div>
+                    <div class="cart-total">Total Pembayaran: Rp <span id="checkoutTotal">0</span></div>
+                </div>
+
+                <button class="btn" onclick="goToPayment()" style="width: 100%; margin-top: 20px;">Lanjut ke Pembayaran</button>
+                <button class="btn btn-secondary" onclick="goToPage('homepage')" style="width: 100%; margin-top: 10px;">Kembali</button>
+            </div>
+        </div>
+
+        <!-- Halaman Pembayaran QRIS -->
+        <div id="paymentPage" class="page">
+            <div class="qris-container">
+                <h2>💳 Pembayaran QRIS</h2>
+                <p class="qris-desc">Scan QR Code di bawah ini untuk melakukan pembayaran</p>
+                
+                <div class="qr-canvas">
+                    <img id="qrCodeImage" src="qris.png" alt="QRIS Payment">
+                </div>
+
+                <div class="qris-info">
+                    <p><strong>Nama Penerima:</strong> Fakhri Maulana Januar</p>
+                    <p><strong>Merchant:</strong> DANA - UMI</p>
+                    <p><strong>NMID:</strong> ID1025391665581</p>
+                </div>
+
+                <div class="cart-total payment-total">Total Pembayaran: Rp <span id="paymentTotal">0</span></div>
+
+                <p class="upload-note">⚠️ Setelah pembayaran, upload bukti dan kirim via WhatsApp</p>
+
+                <div class="form-group">
+                    <label>Upload Bukti Pembayaran *</label>
+                    <input type="file" id="proofFile" accept="image/*" onchange="previewFile()">
+                    <div id="filePreview" class="file-preview"></div>
+                </div>
+
+                <button class="btn btn-success" onclick="sendToWhatsApp()">📤 Kirim Pesanan & Bukti via WhatsApp</button>
+                <button class="btn btn-secondary" onclick="goToPage('checkoutPage')" style="margin-top: 10px;">Kembali</button>
+            </div>
+        </div>
+
+        <!-- Halaman Sukses -->
+        <div id="successPage" class="page">
+            <div class="success-message">
+                <h2>✅ Pesanan Berhasil Dikirim!</h2>
+                <p class="success-text">Terima kasih! Pesanan dan bukti pembayaran Anda telah dikirim ke WhatsApp admin.</p>
+                <p class="success-note">Admin akan segera memproses pesanan Anda dalam 5-15 menit.</p>
+                <p class="success-note">⚠️ Pastikan world Anda aman dan tidak dalam banned!</p>
+                <button class="btn btn-home" onclick="resetAndGoHome()">Kembali ke Beranda</button>
+            </div>
+        </div>
+
+        <!-- Halaman Jual DL -->
+        <div id="sellPage" class="page">
+            <div class="checkout-container">
+                <h2>💸 Jual DL/BGL ke Kami</h2>
+                <div class="rate-info" style="margin-bottom: 20px;">
+                    Rate Beli: 1 DL = Rp 400 | 1 BGL = Rp 40.000
+                </div>
+                
+                <div class="form-group">
+                    <label>GrowID Anda *</label>
+                    <input type="text" id="sellGrowId" placeholder="Contoh: NAMAMU" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jumlah DL yang Dijual *</label>
+                    <input type="number" id="sellDLAmount" placeholder="Contoh: 50" oninput="calculateSellTotal()" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jumlah BGL yang Dijual (opsional)</label>
+                    <input type="number" id="sellBGLAmount" placeholder="Contoh: 2" oninput="calculateSellTotal()">
+                </div>
+
+                <div class="form-group">
+                    <label>Total yang Akan Diterima</label>
+                    <input type="text" id="sellTotal" readonly style="background: #f0f0f0; font-weight: bold; color: #16a34a; font-size: 1.2em;">
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor WhatsApp/DANA *</label>
+                    <input type="tel" id="sellPhone" placeholder="08123456789" required>
+                </div>
+
+                <div class="warning-box" style="margin: 20px 0;">
+                    📍 DROP DL/BGL DI WORLD: <strong>FAKSTORESV</strong>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Bukti Screenshot Drop *</label>
+                    <input type="file" id="sellProofFile" accept="image/*" onchange="previewSellFile()">
+                    <div id="sellFilePreview" class="file-preview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Catatan Tambahan</label>
+                    <textarea id="sellNotes" rows="3" placeholder="Tambahkan catatan jika ada (opsional)..."></textarea>
+                </div>
+
+                <button class="btn btn-success" onclick="sendSellToWhatsApp()">📤 Kirim Bukti Drop via WhatsApp</button>
+                <button class="btn btn-secondary" onclick="goToPage('homepage')" style="margin-top: 10px;">Kembali</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 MAIN.ID – Jual Diamond Lock & Blue Gem Lock Growtopia Terpercaya</p>
+            <p>TikTok/IG: @_fuckhry | WhatsApp: 085737668457</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
